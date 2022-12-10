@@ -20,5 +20,15 @@ const app = Vue.createApp({
         updateVariant(index) {
             this.selectedVariant = index
         }
+    },
+    computed: {
+        title() {
+            return this.brand + ' ' + this.product
+        }
+    },
+    onSale() {
+        if(onSale) {
+            return this.brand + ' has a sale on ' + this.product
+        }
     }
 })
