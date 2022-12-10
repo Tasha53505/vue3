@@ -26,9 +26,11 @@ const app = Vue.createApp({
             return this.brand + ' ' + this.product
         }
     },
-    onSale() {
-        if(onSale) {
+    sale() {
+        if(this.onSale) {
             return this.brand + ' has a sale on ' + this.product
+        } else {
+            return ' '
         }
     }
 })
