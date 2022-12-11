@@ -26,11 +26,11 @@ const app = Vue.createApp({
             return this.brand + ' ' + this.product
         }
     },
-    sale() {
-        if(this.onSale) {
-            return this.brand + ' has a sale on ' + this.product
-        } else {
-            return ' '
-        }
+   sale() {
+    if(this.onSale) {
+        return this.brand + ' ' + this.product + "has a sale on!"
+    } else {
+        return 'No sale'
     }
+   }
 })
