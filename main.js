@@ -25,6 +25,10 @@ const app = Vue.createApp({
         title() {
             return this.brand + ' ' + this.product
         },
+
+        image() {
+            this.variants.variant[selectedVariant]
+        },
         sale() {
             if(this.onSale) {
                 return this.brand + " " + this.product + "has a sale on!"
