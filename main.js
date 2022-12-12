@@ -27,7 +27,11 @@ const app = Vue.createApp({
         },
 
         image() {
-            this.variants[this.selectedVariant].image
+            return this.variants[this.selectedVariant].image
+        },
+
+        quantity() {
+            return this.variants[this.selectedVariant].quantity
         },
         sale() {
             if(this.onSale) {
