@@ -5,7 +5,7 @@ const app = Vue.createApp({
             product: 'Socks',
             brand: 'Vue Mastery',
             selectedVariant: 0,
-            onSale: true,
+            onSale: false,
             details: ['50% cotton', '30% wool', '20% polyester'],
             variants: [
               { id: 2234, color: 'green', image: './assets/images/socks_green.jpg', quantity: 50 },
@@ -24,13 +24,14 @@ const app = Vue.createApp({
     computed: {
         title() {
             return this.brand + ' ' + this.product
-        }
+        },
+        sale() {
+            if(this.onSale) {
+                return this.brand + " " + this.product + "has a sale on!"
+            } else {
+                return "No sale"
+            }
+           }
     },
-   sale() {
-    if(this.onSale) {
-        return this.brand + ' ' + this.product + "has a sale on!"
-    } else {
-        return 'No sale'
-    }
-   }
+  
 })
