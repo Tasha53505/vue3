@@ -38,9 +38,12 @@ app.component('product-display', {
           v-on:click="addToCart">
           Add to Cart
         </button>
-
       </div>
     </div>
+  <review-form @review-submitted="addReview"> </review-form>
+  <review-list :reviews="reviews"></review-list>  
+
+
   </div>`,
   data() {
     return {
@@ -51,7 +54,8 @@ app.component('product-display', {
         variants: [
           { id: 2234, color: 'green', image: './assets/images/socks_green.jpg', quantity: 50 },
           { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg', quantity: 0 },
-        ]
+        ],
+        reviews: []
     }
   },
   methods: {
@@ -60,6 +64,11 @@ app.component('product-display', {
       },
       updateVariant(index) {
           this.selectedVariant = index
+      },
+
+      addReview(review) {
+        this.reviews.push(review) 
+        // takes in review that we got from the event payload and pushes it into the reviews array
       }
   },
   computed: {
