@@ -76,7 +76,15 @@ computed: {
         } else {
             return "No sale"
         }
-       }
+       },
+    shipping() {
+        if(this.premium) {
+            return "Free"
+        } else {
+            return '$5.50'
+        }
+    }
+ 
 },
 
 
